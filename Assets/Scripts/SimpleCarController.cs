@@ -71,7 +71,13 @@ public class SimpleCarController : MonoBehaviour {
             AccelerateWithValue(accelerationValue);
             UpdateWheelPoses();
         }
-	}
+        vel = rg.velocity;      //to get a Vector3 representation of the velocity
+        speed = vel.magnitude;
+        print(speed);
+    }
+
+    public Vector3 vel ;
+    public float speed;
 
     public bool ManualDriving = false;
 
@@ -83,6 +89,7 @@ public class SimpleCarController : MonoBehaviour {
 	private float m_verticalInput;
 	private float m_steeringAngle;
 
+    public Rigidbody rg;
 	public WheelCollider frontDriverW, frontPassengerW;
 	public WheelCollider rearDriverW, rearPassengerW;
 	public Transform frontDriverT, frontPassengerT;
