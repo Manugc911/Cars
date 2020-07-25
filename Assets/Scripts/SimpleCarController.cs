@@ -71,7 +71,7 @@ public class SimpleCarController : MonoBehaviour {
             AccelerateWithValue(accelerationValue);
             UpdateWheelPoses();
         }
-        vel = rg.velocity;      //to get a Vector3 representation of the velocity
+        vel = this.GetComponent<Rigidbody>().velocity;      //to get a Vector3 representation of the velocity
         speed = vel.magnitude;
         print(speed);
     }
@@ -88,8 +88,7 @@ public class SimpleCarController : MonoBehaviour {
     private float m_horizontalInput;
 	private float m_verticalInput;
 	private float m_steeringAngle;
-
-    public Rigidbody rg;
+    
 	public WheelCollider frontDriverW, frontPassengerW;
 	public WheelCollider rearDriverW, rearPassengerW;
 	public Transform frontDriverT, frontPassengerT;
