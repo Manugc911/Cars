@@ -12,7 +12,7 @@ public class Detectors : MonoBehaviour {
 
     float correctionDistance = 0f;
     float finalDistance = 0f;
-    float distanceTruncated = 99f;
+    public float distanceTruncated = 99f;
 
     public float maxDistanceDetection = 10f;
 

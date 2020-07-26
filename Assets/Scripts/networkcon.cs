@@ -3,10 +3,19 @@ using System.Net.Sockets;
 using System.Text;
 using UnityEngine;
 using System.Threading;
+using System.IO;
 
 public class networkcon : MonoBehaviour
 {
     public GameObject car;
+    public  Detectors rightDetector;
+    public Detectors leftDetector;
+    public Detectors frontDetector;
+    float speed;
+
+
+
+
     Thread mThread;
     public string connectionIP = "127.0.0.1";
     public int connectionPort = 25001;//25001
@@ -20,12 +29,16 @@ public class networkcon : MonoBehaviour
 
     private void Update()
     {
-        
+        speed = car.GetComponent<Rigidbody>().velocity.magnitude;
+        speed = Mathf.Floor(speed* 100) / 100;
+
         if (dataReceived!=null)
         {
             AnalyseData(dataReceived);
         }
         //transform.position = pos;
+        //NetworkStream nwStream = client.GetStream();
+    
     }
 
     private void Start()
@@ -82,6 +95,7 @@ public class networkcon : MonoBehaviour
         int bytesRead = nwStream.Read(buffer, 0, client.ReceiveBufferSize);
         dataReceived = null;
         dataReceived = Encoding.UTF8.GetString(buffer, 0, bytesRead);
+        
 
         if (dataReceived != null)
         {
@@ -95,6 +109,15 @@ public class networkcon : MonoBehaviour
                 
               //  print("data: "+ dataReceived);
                 nwStream.Write(buffer, 0, bytesRead);
+                
+                StreamWriter writer = new StreamWriter(nwStream);
+
+                // make and send the request
+                
+                writer.Write("rightDistance:"+rightDetector.distanceTruncated + ",leftDistance:" + leftDetector.distanceTruncated + ",frontDistance:" + frontDetector.distanceTruncated + ",speed: " + speed);
+                writer.Flush();
+
+           
             }
         }
     }
@@ -107,7 +130,7 @@ public class networkcon : MonoBehaviour
                 if(dataItem.Trim()!= "")
                 {
                     string[] strings = dataItem.Split(':');
-                    if(strings[0].Trim() != "")
+                    if(strings[0].Trim() != "" && strings[1].Trim() != "")
                     {
                         string command = strings[0];
                         string value = strings[1];

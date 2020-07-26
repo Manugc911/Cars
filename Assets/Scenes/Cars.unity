@@ -1153,6 +1153,7 @@ MonoBehaviour:
   name: 'Front '
   textObject: {fileID: 888710678}
   car: {fileID: 963582535}
+  distanceTruncated: 99
   maxDistanceDetection: 10
   whiteMat: {fileID: 2100000, guid: 027b7134e472b0b4fa44332fcd242a1b, type: 2}
   redMat: {fileID: 2100000, guid: 11b1386ced38503458a29a69d410ab38, type: 2}
@@ -1794,6 +1795,7 @@ MonoBehaviour:
   name: Left
   textObject: {fileID: 2077954244}
   car: {fileID: 963582535}
+  distanceTruncated: 99
   maxDistanceDetection: 10
   whiteMat: {fileID: 2100000, guid: 027b7134e472b0b4fa44332fcd242a1b, type: 2}
   redMat: {fileID: 2100000, guid: 11b1386ced38503458a29a69d410ab38, type: 2}
@@ -1823,8 +1825,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 955097604}
   m_LocalRotation: {x: -0, y: 0.93833786, z: -0, w: 0.3457197}
-  m_LocalPosition: {x: 223.82, y: 132.28, z: -17.64}
-  m_LocalScale: {x: 3.9780257, y: 1, z: 0.77442044}
+  m_LocalPosition: {x: 223.66, y: 132.28, z: -17.78}
+  m_LocalScale: {x: 3.272523, y: 1, z: 0.77442044}
   m_Children: []
   m_Father: {fileID: 1889078611}
   m_RootOrder: 10
@@ -2429,6 +2431,7 @@ MonoBehaviour:
   name: Right
   textObject: {fileID: 1926489359}
   car: {fileID: 963582535}
+  distanceTruncated: 99
   maxDistanceDetection: 10
   whiteMat: {fileID: 2100000, guid: 027b7134e472b0b4fa44332fcd242a1b, type: 2}
   redMat: {fileID: 2100000, guid: 11b1386ced38503458a29a69d410ab38, type: 2}
@@ -3159,7 +3162,7 @@ Light:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1526980365}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
