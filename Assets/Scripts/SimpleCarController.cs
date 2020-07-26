@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class SimpleCarController : MonoBehaviour {
@@ -73,7 +71,7 @@ public class SimpleCarController : MonoBehaviour {
         }
         vel = this.GetComponent<Rigidbody>().velocity;      //to get a Vector3 representation of the velocity
         speed = vel.magnitude;
-        print(speed);
+        //print("Speed: "+speed );
     }
 
     public Vector3 vel ;
