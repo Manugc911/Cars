@@ -12,8 +12,11 @@ while go:
     i+=1
     try:
         sock.sendall(data.encode("utf-8"))
-        data = sock.recv(1024).decode("utf-8")
-        print(data)
+        print('Data sent is' + data)
+        inputData = sock.recv(1024).decode("utf-8")
+        print('Data received' + inputData)
+
+
         
     finally: 
         if (i > 8000):
