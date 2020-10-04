@@ -26,13 +26,7 @@ TODO
 4. Open project in Unity -> Assets -> Scenes -> Cars -> Uncheck manual driving -> Click Play
 5. Execute Pyton Code -> networkcon.py
 
-
 ## Known bugs and troubleshooting
 No bugs known yet
 ## References
 
-In Python Code folder is located the python snippet to send info to the unity project.
-
-Selecting the car Object,in the inspector side you can select the Manual Driving, or unselect for letting drive the python code.
-
- 
